@@ -61,7 +61,8 @@ const MyOrderPage = () => {
   }, [isErrorCancle, isSuccessCancel])
 
   const renderProduct = (data) => {
-    if(data.length > 0){
+    console.log(data);
+    if(data){
     return data?.map((order) => {
       return <WrapperHeaderItem key={order?._id}> 
               <img src={order?.image} 
@@ -92,7 +93,7 @@ const MyOrderPage = () => {
         <div style={{height: '100%', width: '1270px', margin: '0 auto'}}>
           <h4>Đơn hàng của tôi</h4>
           <WrapperListOrder>
-            {data && data.length > 0 && data?.map((order) => {
+            {data && data?.map((order) => {
               return (
                 <WrapperItemOrder key={order?._id}>
                   <WrapperStatus>
